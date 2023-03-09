@@ -181,6 +181,21 @@ include:
     test:
       ebpf-core: true
 
+  - distro: opensuse
+    version: "tumbleweed"
+    eol_check: false
+    base_image: opensuse/tumbleweed:latest
+    jsonc_removal: |
+      zypper rm -y libjson-c-devel
+    packages:
+      type: rpm
+      repo_distro: opensuse/tumbleweed
+      arches:
+        - x86_64
+        - aarch64
+    test:
+      ebpf-core: true
+
   - &oracle
     distro: oraclelinux
     version: "8"
