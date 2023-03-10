@@ -721,12 +721,8 @@ update_binpkg() {
     DISTRO_COMPAT_NAME="${DISTRO}"
   else
     case "${DISTRO}" in
-      opensuse-leap)
+      opensuse-leap|opensuse-tumbleweed)
         DISTRO_COMPAT_NAME="opensuse"
-        ;;
-      opensuse-tumbleweed)
-        DISTRO_COMPAT_NAME="opensuse"
-        SYSVERSION="tumbleweed"
         ;;
       cloudlinux|almalinux|rocky|rhel)
         DISTRO_COMPAT_NAME="centos"
