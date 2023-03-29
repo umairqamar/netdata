@@ -182,9 +182,9 @@ get_os_release() {
     case "${x,,}" in
       almalinux | alpine | arch | centos | clear-linux-os | debian | fedora | gentoo | manjaro | opensuse-leap | opensuse-tumbleweed | ol | rhel | rocky | sabayon | sles | suse | ubuntu)
         distribution="${x}"
-        if ["{ID}" = "opensuse-tumbleweed"]; then
-          version=tumbleweed
-          codename=tumbleweed
+        if [ "{ID}" = "opensuse-tumbleweed" ]; then
+          version="tumbleweed"
+          codename="tumbleweed"
         else
           version="${VERSION_ID}"
           codename="${VERSION}"
