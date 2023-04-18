@@ -2,12 +2,10 @@
 
 charts: 
   system.cpu:
-    type: system
     dimensions: [user,nice,system,idle,iowait,irl,softirq,steal,guest,guest_nice]
     units: percentage
 
   cpu.cpu:
-    type: cpu
     dimensions: [user,nice,system,idle,iowait,irl,softirq,steal,guest,guest_nice]
     units: percentage
 
