@@ -1,0 +1,15 @@
+# Collector information for the proc.plugin
+
+charts: 
+  Total CPU utilization:
+    type: system
+    context: system.cpu
+    dimensions: [user,nice,system,idle,iowait,irl,softirq,steal,guest,guest_nice]
+    units: percentage
+
+  Core utilization:
+    type: cpu
+    context: cpu.cpu
+    dimensions: [user,nice,system,idle,iowait,irl,softirq,steal,guest,guest_nice]
+    units: percentage
+
