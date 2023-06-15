@@ -203,47 +203,8 @@ The usage statistics are _vital_ for us, as we use them to discover bugs and pri
 _actively_ contributing to Netdata's future.
 
 ### Troubleshooting and known issues
-
-We are tracking a few issues related to installation and packaging.
-
-#### Older distributions (Ubuntu 14.04, Debian 8, CentOS 6) and OpenSSL
-
-If you're running an older Linux distribution or one that has reached EOL, such as Ubuntu 14.04 LTS, Debian 8, or CentOS
-6, your Agent may not be able to securely connect to Netdata Cloud due to an outdated version of OpenSSL. These old
-versions of OpenSSL cannot perform [hostname validation](https://wiki.openssl.org/index.php/Hostname_validation), which
-helps securely encrypt SSL connections.
-
-If you choose to continue using the outdated version of OpenSSL, your node will still connect to Netdata Cloud, albeit
-with hostname verification disabled. Without verification, your Netdata Cloud connection could be vulnerable to
-man-in-the-middle attacks.
-
-#### CentOS 6 and CentOS 8
-
-To install the Agent on certain CentOS and RHEL systems, you must enable non-default repositories, such as EPEL or
-PowerTools, to gather hard dependencies. See the [CentOS 6](https://github.com/netdata/netdata/blob/master/packaging/installer/methods/manual.md#centos--rhel-6x) and
-[CentOS 8](https://github.com/netdata/netdata/blob/master/packaging/installer/methods/manual.md#centos--rhel-8x) sections for more information.
-
-#### Access to file is not permitted
-
-If you see an error similar to `Access to file is not permitted: /usr/share/netdata/web//index.html` when you try to
-visit the Agent dashboard at `http://NODE:19999`, you need to update Netdata's permissions to match those of your
-system.
-
-Run `ls -la /usr/share/netdata/web/index.html` to find the file's permissions. You may need to change this path based on
-the error you're seeing in your browser. In the below example, the file is owned by the user `root` and the group
-`root`.
-
-```bash
-ls -la /usr/share/netdata/web/index.html
--rw-r--r--. 1 root root 89377 May  5 06:30 /usr/share/netdata/web/index.html
-```
-
-These files need to have the same user and group used to install your netdata. Suppose you installed netdata with user
-`netdata` and group `netdata`, in this scenario you will need to run the following command to fix the error:
-
-```bash
-# chown -R netdata.netdata /usr/share/netdata/web
-```
+ 
+Explore the known limitation and installation troubleshooting actions in the [Agent troubleshooting guide](https://github.com/netdata/netdata/view/master/packaging/installer/INSTALL-DEBUG.md).
 
 #### Multiple versions of OpenSSL
 
